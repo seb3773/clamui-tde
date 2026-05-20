@@ -1,0 +1,17 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=ClamUI
+Name[fr]=ClamUI
+Name[de]=ClamUI
+GenericName=Antivirus Scanner
+GenericName[fr]=Scanner Antivirus
+GenericName[de]=Antivirus Scanner
+Comment=Native Trinity frontend for ClamAV
+Comment[fr]=Interface native Trinity pour ClamAV
+Comment[de]=Native Trinity-Oberfläche für ClamAV
+Exec=tdeclamui
+Icon=security-high
+Type=Application
+Terminal=false
+Categories=TDE;Qt;System;Security;
+X-TDE-SubstituteUID=false
