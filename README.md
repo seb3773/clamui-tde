@@ -81,7 +81,7 @@ This project is licensed under the MIT License.
   ![screenshot](screenshots/screenshot_tdeclamui_3.jpg)
   ![screenshot](screenshots/screenshot_tdeclamui_4.jpg)
   ![screenshot](screenshots/screenshot_tdeclamui_5.jpg)
-
+  ![screenshot](screenshots/screenshot_tdeclamui_6.jpg)
   ![screenshot](screenshots/screenshot_tdeclamui_7.jpg)
   ![screenshot](screenshots/screenshot_tdeclamui_8.jpg)
   ![screenshot](screenshots/screenshot_tdeclamui_9.jpg)
