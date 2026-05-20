@@ -8,7 +8,7 @@ Originally inspired by ClamUI (written in Python/GTK4/libadwaita), this project 
 
 ---
 
-## 🚀 Key Advantages Over the Original ClamUI
+## Key Advantages Over the Original ClamUI
 
 ### 1. Low Resource Usage & Instant Startup
 * **Zero Python Overhead**: By dropping the Python runtime, PyGObject, and GTK4 dependencies, TDEClamUI starts **instantly** (in less than 20 milliseconds) and consumes a fraction of the RAM.
