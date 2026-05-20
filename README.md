@@ -74,4 +74,15 @@ To reset the repository:
 ---
 
 ## 📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License.
+
+  ![screenshot](screenshots/screenshot_tdeclamui_1.jpg)
+  ![screenshot](screenshots/screenshot_tdeclamui_2.jpg)
+  ![screenshot](screenshots/screenshot_tdeclamui_3.jpg)
+  ![screenshot](screenshots/screenshot_tdeclamui_4.jpg)
+  ![screenshot](screenshots/screenshot_tdeclamui_5.jpg)
+  ![screenshot](screenshots/screenshot_tdeclamui_6.jpg)
+  ![screenshot](screenshots/screenshot_tdeclamui_7.jpg)
+  ![screenshot](screenshots/screenshot_tdeclamui_8.jpg)
+  ![screenshot](screenshots/screenshot_tdeclamui_9.jpg)
+
