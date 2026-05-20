@@ -1,0 +1,114 @@
+/****************************************************************************
+** Runner meta object code from reading C++ file 'main.cpp'
+**
+** Created by: The TQt Meta Object Compiler version 26 (TQt 3.5.0)
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#include <ntqmetaobject.h>
+#include <ntqapplication.h>
+
+#include <private/qucomextra_p.h>
+#if !defined(Q_MOC_OUTPUT_REVISION) || (Q_MOC_OUTPUT_REVISION != 26)
+#error "This file was generated using the moc from 3.5.0. It"
+#error "cannot be used with the include files from this version of TQt."
+#error "(The moc has changed too much.)"
+#endif
+
+const char *Runner::className() const
+{
+    return "Runner";
+}
+
+TQMetaObject *Runner::metaObj = 0;
+static TQMetaObjectCleanUp cleanUp_Runner( "Runner", &Runner::staticMetaObject );
+
+#ifndef TQT_NO_TRANSLATION
+TQString Runner::tr( const char *s, const char *c )
+{
+    if ( tqApp )
+	return tqApp->translate( "Runner", s, c, TQApplication::DefaultCodec );
+    else
+	return TQString::fromLatin1( s );
+}
+#ifndef TQT_NO_TRANSLATION_UTF8
+TQString Runner::trUtf8( const char *s, const char *c )
+{
+    if ( tqApp )
+	return tqApp->translate( "Runner", s, c, TQApplication::UnicodeUTF8 );
+    else
+	return TQString::fromUtf8( s );
+}
+#endif // TQT_NO_TRANSLATION_UTF8
+
+#endif // TQT_NO_TRANSLATION
+
+TQMetaObject* Runner::staticMetaObject()
+{
+    if ( metaObj ) {
+	return metaObj;
+}
+#ifdef TQT_THREAD_SUPPORT
+    if (tqt_sharedMetaObjectMutex) tqt_sharedMetaObjectMutex->lock();
+    if ( metaObj ) {
+	if (tqt_sharedMetaObjectMutex) tqt_sharedMetaObjectMutex->unlock();
+	return metaObj;
+    }
+#endif // TQT_THREAD_SUPPORT
+    TQMetaObject* parentObject = TQObject::staticMetaObject();
+    static const TQUMethod slot_0 = {"onFinished", 0, 0 };
+    static const TQUParameter param_slot_1[] = {
+	{ "msg", &static_QUType_TQString, 0, TQUParameter::In }
+    };
+    static const TQUMethod slot_1 = {"onError", 1, param_slot_1 };
+    static const TQMetaData slot_tbl[] = {
+	{ "onFinished()", &slot_0, TQMetaData::Public },
+	{ "onError(const TQString&)", &slot_1, TQMetaData::Public }
+    };
+    metaObj = TQMetaObject::new_metaobject(
+	"Runner", parentObject,
+	slot_tbl, 2,
+	0, 0,
+#ifndef TQT_NO_PROPERTIES
+	0, 0,
+	0, 0,
+#endif // TQT_NO_PROPERTIES
+	0, 0 );
+    cleanUp_Runner.setMetaObject( metaObj );
+#ifdef TQT_THREAD_SUPPORT
+    if (tqt_sharedMetaObjectMutex) tqt_sharedMetaObjectMutex->unlock();
+#endif // TQT_THREAD_SUPPORT
+    return metaObj;
+}
+
+void* Runner::tqt_cast( const char* clname )
+{
+    if ( !qstrcmp( clname, "Runner" ) )
+	return this;
+    return TQObject::tqt_cast( clname );
+}
+
+bool Runner::tqt_invoke( int _id, TQUObject* _o )
+{
+    switch ( _id - staticMetaObject()->slotOffset() ) {
+    case 0: onFinished(); break;
+    case 1: onError((const TQString&)static_QUType_TQString.get(_o+1)); break;
+    default:
+	return TQObject::tqt_invoke( _id, _o );
+    }
+    return TRUE;
+}
+
+bool Runner::tqt_emit( int _id, TQUObject* _o )
+{
+    return TQObject::tqt_emit(_id,_o);
+}
+#ifndef TQT_NO_PROPERTIES
+
+bool Runner::tqt_property( int id, int f, TQVariant* v)
+{
+    return TQObject::tqt_property( id, f, v);
+}
+
+bool Runner::tqt_static_property( TQObject* , int , int , TQVariant* ){ return FALSE; }
+#endif // TQT_NO_PROPERTIES
