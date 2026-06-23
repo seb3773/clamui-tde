@@ -23,7 +23,11 @@
 
 static int runCommand(const TQString &cmd, TQString &output) {
     output = "";
-    FILE *fp = popen(cmd.latin1(), "r");
+    TQString fullCmd = cmd;
+    if (!fullCmd.contains("2>/dev/null")) {
+        fullCmd += " 2>/dev/null";
+    }
+    FILE *fp = popen(fullCmd.latin1(), "r");
     if (!fp) return -1;
     char buffer[1024];
     while (fgets(buffer, sizeof(buffer), fp) != NULL) {

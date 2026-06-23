@@ -23,7 +23,11 @@ static TQMutex s_popenMutex;
 static TQString runCommand(const TQString& cmd, int* exitCode = nullptr) {
     TQMutexLocker locker(&s_popenMutex);
     TQString output;
-    FILE* pipe = popen(cmd.latin1(), "r");
+    TQString fullCmd = cmd;
+    if (!fullCmd.contains("2>/dev/null")) {
+        fullCmd += " 2>/dev/null";
+    }
+    FILE* pipe = popen(fullCmd.latin1(), "r");
     if (!pipe) return output;
     char buffer[256];
     while (fgets(buffer, sizeof(buffer), pipe) != nullptr) {
