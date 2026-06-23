@@ -35,7 +35,7 @@ int ClamUIApp::newInstance()
 
         /* Create system tray */
         m_tray = new ClamTray(m_mainWindow);
-        setMainWidget(m_tray);
+        setMainWidget(m_mainWindow);
         m_tray->show();
         m_mainWindow->setTray(m_tray);
 
