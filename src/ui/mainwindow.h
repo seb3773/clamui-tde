@@ -84,6 +84,7 @@ private slots:
     void updateStatusBarStats();
     void onSettingsChanged();
     void slotShowLatestLog();
+    void checkDatabaseAge();
 
 private:
     void setupManagers();
@@ -127,6 +128,7 @@ private:
     /* Scheduled scan state */
     bool m_scheduledAutoQuit;
     bool m_userShownWindow;
+    bool m_dbAgeChecked;
 };
 
 #endif /* CLAM_MAINWINDOW_H */

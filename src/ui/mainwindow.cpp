@@ -66,7 +66,7 @@ ClamMainWindow::ClamMainWindow()
       m_viewStack(0), m_tray(0), m_scanView(0), m_updateView(0), m_logsView(0),
       m_quarantineView(0), m_statsView(0), m_auditView(0), m_quickScanAction(0),
       m_scanFileAction(0), m_updateDbAction(0), m_prefsAction(0),
-      m_scheduledAutoQuit(false), m_userShownWindow(false) {
+      m_scheduledAutoQuit(false), m_userShownWindow(false), m_dbAgeChecked(false) {
   setCaption(i18n("TDE ClamUI"));
   setIcon(IconUtils::load(main_icon_png, main_icon_png_len));
   setMinimumSize(1100, 650);
@@ -569,7 +569,37 @@ void ClamMainWindow::showEvent(TQShowEvent *e)
   /* If the window is shown, it means the user interacts with the UI, 
      so we should no longer auto-quit when a background scan finishes. */
   m_userShownWindow = true;
+  if (!m_dbAgeChecked) {
+    m_dbAgeChecked = true;
+    TQTimer::singleShot(200, this, TQT_SLOT(checkDatabaseAge()));
+  }
   TDEMainWindow::showEvent(e);
+}
+
+void ClamMainWindow::checkDatabaseAge() {
+  if (isScanRunning()) return;
+
+  int dbAge = ClamAVDetection::getDatabaseAgeDays();
+  if (dbAge > 7 || dbAge == -1) {
+    TQString msg;
+    if (dbAge == -1) {
+      msg = i18n("No virus database was found on your system.\n"
+                 "Your system is currently unprotected.\n\n"
+                 "Would you like to update the virus database now?");
+    } else {
+      msg = i18n("Your virus database is %1 days old (which is older than 7 days).\n"
+                 "It is highly recommended to update it to ensure detection of the latest threats.\n\n"
+                 "Would you like to update the virus database now?").arg(dbAge);
+    }
+    int res = KMessageBox::warningYesNo(this,
+        msg,
+        i18n("Outdated Virus Database"),
+        KGuiItem(i18n("Update Now"), "reload"),
+        KStdGuiItem::cancel());
+    if (res == KMessageBox::Yes) {
+      slotUpdateDatabase();
+    }
+  }
 }
 
 #include "mainwindow.moc"
