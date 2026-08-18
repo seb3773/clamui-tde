@@ -2,7 +2,7 @@
 set -euo pipefail
 
 PKG_NAME="tdeclamui"
-PKG_VERSION="1.0.0"
+PKG_VERSION="1.0.1"
 PKG_MAINTAINER="seb3773"
 PKG_SECTION="utils"
 PKG_PRIORITY="optional"
@@ -12,6 +12,9 @@ ARCH="$(dpkg --print-architecture)"
 BUILD_DIR="$SRC_ROOT/build"
 PKGROOT="$BUILD_DIR/pkgroot"
 PKGTMP="$BUILD_DIR/pkgtmp"
+
+export PATH="/opt/trinity/bin:$PATH"
+export PKG_CONFIG_PATH="/opt/trinity/lib/pkgconfig:${PKG_CONFIG_PATH:-}"
 
 need_cmd() {
 	command -v "$1" >/dev/null 2>&1 || {

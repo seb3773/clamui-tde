@@ -4,6 +4,9 @@ set -euo pipefail
 SRC_ROOT="$(cd "$(dirname "$0")" && pwd)"
 BUILD_DIR="$SRC_ROOT/build"
 
+export PATH="/opt/trinity/bin:$PATH"
+export PKG_CONFIG_PATH="/opt/trinity/lib/pkgconfig:${PKG_CONFIG_PATH:-}"
+
 need_cmd() {
 	if ! command -v "$1" >/dev/null 2>&1; then
 		echo "Missing tool: $1" 1>&2
