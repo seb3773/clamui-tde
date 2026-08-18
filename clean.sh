@@ -7,6 +7,10 @@ ROOT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$ROOT_DIR"
 
 rm -rf -- \
-	build
+	build \
+	qsi_setup/deb_packages/*.deb \
+	qsi_setup/output/*.qsi \
+	qsi_setup/qinstaller \
+	*.qsi
 
 exit 0

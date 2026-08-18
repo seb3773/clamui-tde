@@ -40,13 +40,14 @@ Originally inspired by ClamUI (written in Python/GTK4/libadwaita), this project 
 
 To facilitate deployment, custom utility scripts to manage packaging and cleaning are included:
 
-* **`clean.sh`**: Instantly wipes all out-of-tree CMake build directories, leaving the repository in a pristine, git-ready state.
+* **`clean.sh`**: Instantly wipes all out-of-tree CMake build directories and packaging artifacts, leaving the repository in a pristine, git-ready state.
 * **`build_deb.sh`**: Compiles and packages TDEClamUI into a standard, lightweight, and installable Debian package (`.deb`).
   * **Minimal & Optimal Dependencies**: Features a clean control file without bloated or redundant library dependencies (such as `libtqt3-mt`, which is already pulled by TDE libraries), avoiding package manager conflicts:
     ```control
     Depends: tdelibs14-trinity (>= 4:14.1.1), clamav, clamav-freshclam, rsync, gnupg, curl
     ```
   * **Custom Branding**: Stages and registers 64x64 application icon under `/usr/share/icons/hicolor` and links all standard sizes (16x16 up to 48x48) automatically.
+* **`build_qsi.sh`**: Packages TDEClamUI into a native **Q4OS Installer (`.qsi`)** for single-click installation on Q4OS systems, featuring custom setup wizard artwork, automatic dependency handling, and Trinity sycoca menu integration.
 
 ---
 
@@ -65,7 +66,13 @@ To compile and generate an installable `.deb` package:
 ./build_deb.sh
 ```
 
-### 3. Clean Project Artifacts
+### 3. Generate Q4OS (.qsi) Installer
+To generate a standalone Q4OS `.qsi` installer:
+```bash
+./build_qsi.sh
+```
+
+### 4. Clean Project Artifacts
 To reset the repository:
 ```bash
 ./clean.sh
